@@ -17,12 +17,22 @@ body {
   font-family: 'Inter';
 }
 
-.fadeIn {
-  animation: 0.5s fadeIn forwards;
+@keyframes rotateRoomBottomOut {
+  // https://github.com/Steveeeie/react-page-transition/blob/master/src/animations.ts#L572-L581
+  from {
+  }
+  to {
+    opacity: 0.3;
+    transform: translateY(100%) rotateX(90deg);
+  }
 }
 
-.fadeOut {
-  animation: 0.5s fadeOut forwards;
+@keyframes rotateRoomBottomIn {
+  // https://github.com/Steveeeie/react-page-transition/blob/master/src/animations.ts#L582-L590
+  from {
+    opacity: 0.3;
+    transform: translateY(-100%) rotateX(-90deg);
+  }
 }
 
 @keyframes fadeIn {
@@ -44,5 +54,28 @@ body {
   to {
     transform: translate(-20px, 0);
     opacity: 0;
+  }
+}
+
+.roomToBottom {
+  // https://github.com/Steveeeie/react-page-transition/blob/master/src/presets.ts#L454-L462
+  &In {
+    animation: 0.5s rotateRoomBottomIn both;
+    transform-origin: 50% 100%;
+  }
+  &Out {
+    animation: 0.5s rotateRoomBottomOut both;
+    transform-origin: 50% 0%;
+  }
+}
+
+.fade {
+  &In {
+    animation: 0.5s fadeIn forwards;
+    transform-origin: 50% 50%;
+  }
+  &Out {
+    animation: 0.5s fadeOut forwards;
+    transform-origin: 50% 50%;
   }
 }
