@@ -1,11 +1,5 @@
 import {createRoot} from 'react-dom/client';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useLocation,
-  Link,
-} from 'react-router-dom';
+import {BrowserRouter, Routes, Route, useLocation} from 'react-router-dom';
 import {useEffect, useMemo, useState} from 'react';
 import {TransitionGroup, CSSTransition} from 'react-transition-group';
 import {HomePage} from './pages/home';
@@ -14,7 +8,7 @@ import '@fontsource/inter';
 import './styles/index.scss';
 import {cx, css} from '@emotion/css';
 
-const presetTypeName = `roomToBottom`;
+const presetTypeName = `doTransition`;
 // const presetTypeName = `fade`;
 
 const App = () => {
@@ -30,28 +24,28 @@ const App = () => {
     }
   }, [location]);
 
-  console.log(transitionStage);
-
   return (
     <div
       className={css`
         position: relative;
+        width: 100%;
+        height: 100%;
+        perspective: 1200px;
       `}
     >
       <div
         className={cx(
-          `${transitionStage}`,
           css`
-            position: absolute;
-            top: 0;
-            left: 0;
+            position: relative;
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
             transform-style: preserve-3d;
             transform: translate3d(0, 0, 0);
             will-change: transform;
-          `
+          `,
+          `${presetTypeName}`,
+          `${transitionStage}`
         )}
         onAnimationStart={(e) => {
           // console.log(`onAnimationStart`);

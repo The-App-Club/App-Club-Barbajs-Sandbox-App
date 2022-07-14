@@ -17,21 +17,21 @@ body {
   font-family: 'Inter';
 }
 
-@keyframes rotateRoomBottomOut {
-  // https://github.com/Steveeeie/react-page-transition/blob/master/src/animations.ts#L572-L581
+@keyframes doOut {
+  // https://github.com/Steveeeie/react-page-transition/blob/master/src/animations.ts#L160-L168
   from {
   }
   to {
-    opacity: 0.3;
-    transform: translateY(100%) rotateX(90deg);
+    opacity: 0;
+    transform: scale(0.8);
   }
 }
 
-@keyframes rotateRoomBottomIn {
-  // https://github.com/Steveeeie/react-page-transition/blob/master/src/animations.ts#L582-L590
+@keyframes doIn {
+  // https://github.com/Steveeeie/react-page-transition/blob/master/src/animations.ts#L118-L125
   from {
     opacity: 0.3;
-    transform: translateY(-100%) rotateX(-90deg);
+    transform: translateX(-100%) rotateZ(0.01deg);
   }
 }
 
@@ -57,25 +57,24 @@ body {
   }
 }
 
-.roomToBottom {
+.doTransition {
   // https://github.com/Steveeeie/react-page-transition/blob/master/src/presets.ts#L454-L462
+  transform-origin: center center;
   &In {
-    animation: 0.5s rotateRoomBottomIn both;
-    transform-origin: 50% 100%;
+    animation: 0.5s doIn both;
   }
   &Out {
-    animation: 0.5s rotateRoomBottomOut both;
-    transform-origin: 50% 0%;
+    animation: 0.5s doOut both;
+    transform-origin: bottom right;
   }
 }
 
 .fade {
+  transform-origin: center center;
   &In {
     animation: 0.5s fadeIn forwards;
-    transform-origin: 50% 50%;
   }
   &Out {
     animation: 0.5s fadeOut forwards;
-    transform-origin: 50% 50%;
   }
 }

@@ -1,3 +1,5 @@
 - Reference
   - [react v6 router css page transition](https://codesandbox.io/s/floral-wave-x6299o?from-embed=&file=/src/App.js)
   - [aniamtion end](https://dev.to/fazliddin04/react-router-v6-animated-transitions-diy-3e6l)
+  - [transform-origin](https://developer.mozilla.org/ja/docs/Web/CSS/transform-origin)
+  - [nice demo](https://codesandbox.io/s/advanced-react-page-transition-demo-z8hmd)
