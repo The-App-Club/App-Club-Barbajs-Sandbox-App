@@ -1,6 +1,8 @@
 import {css} from '@emotion/css';
 import {Link} from 'react-router-dom';
 
+import {Spacer} from '../../components/Spacer';
+
 const AboutPage = () => {
   return (
     <div
@@ -21,6 +23,10 @@ const AboutPage = () => {
     >
       <h2>AboutPage</h2>
       <Link to={'/'}>home</Link>
+      {[...Array(100).keys()].map((n) => {
+        return <Spacer key={n} />;
+      })}
+      <p>bottom</p>
     </div>
   );
 };

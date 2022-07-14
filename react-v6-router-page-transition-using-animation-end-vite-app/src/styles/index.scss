@@ -15,15 +15,32 @@ body {
 
 body {
   font-family: 'Inter';
+  background-color: #333; // 奥行を出す色
 }
 
 @keyframes doOut {
   // https://github.com/Steveeeie/react-page-transition/blob/master/src/animations.ts#L160-L168
+  // from {
+  // }
+  // to {
+  //   opacity: 0;
+  //   transform: scale(0.8);
+  // }
+
+  // https://github.com/Steveeeie/react-page-transition/blob/master/src/animations.ts#L459-L468
+  // from {
+  // }
+  // to {
+  //   opacity: 0;
+  //   transform: translateY(-100%) rotateX(90deg);
+  // }
+
+  // https://github.com/Steveeeie/react-page-transition/blob/master/src/animations.ts#L675-L684
   from {
   }
   to {
-    opacity: 0;
-    transform: scale(0.8);
+    opacity: 0.3;
+    transform: translateX(-150%) scale(0.4) rotateY(-65deg);
   }
 }
 
@@ -31,7 +48,7 @@ body {
   // https://github.com/Steveeeie/react-page-transition/blob/master/src/animations.ts#L118-L125
   from {
     opacity: 0.3;
-    transform: translateX(-100%) rotateZ(0.01deg);
+    transform: translateX(100%) rotateZ(0.01deg);
   }
 }
 
@@ -61,11 +78,13 @@ body {
   // https://github.com/Steveeeie/react-page-transition/blob/master/src/presets.ts#L454-L462
   transform-origin: center center;
   &In {
-    animation: 0.5s doIn both;
+    animation: 0.8s doIn both;
   }
   &Out {
-    animation: 0.5s doOut both;
-    transform-origin: bottom right;
+    animation: 0.8s doOut both;
+    // transform-origin: bottom right;
+    // transform-origin: 50% 100%;
+    transform-origin: 100% 50%;
   }
 }
 

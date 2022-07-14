@@ -31,6 +31,7 @@ const App = () => {
         width: 100%;
         height: 100%;
         perspective: 1200px;
+        overflow: hidden;
       `}
     >
       <div
@@ -49,17 +50,17 @@ const App = () => {
         )}
         onAnimationStart={(e) => {
           // console.log(`onAnimationStart`);
-          const html = document.documentElement;
-          const body = html.querySelector('body');
-          html.classList.add('is-loading');
-          body.classList.add('is-loading');
+          // const html = document.documentElement;
+          // const body = html.querySelector('body');
+          // html.classList.add('is-loading');
+          // body.classList.add('is-loading');
         }}
         onAnimationEnd={(e) => {
           // console.log(`onAnimationEnd`);
-          const html = document.documentElement;
-          const body = html.querySelector('body');
-          html.classList.remove('is-loading');
-          body.classList.remove('is-loading');
+          // const html = document.documentElement;
+          // const body = html.querySelector('body');
+          // html.classList.remove('is-loading');
+          // body.classList.remove('is-loading');
           if (transitionStage === `${presetTypeName}Out`) {
             setTransitionStage(`${presetTypeName}In`);
             setDisplayLocation(location);
